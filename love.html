@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDMSLK | YOU CHOOSE , WE PACK 💪🏻🎬🎞️👆🏻</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        /* --- 1. Reset & Global Styles --- */
+        * { 
+            box-sizing: border-box; 
+            font-family: 'Itim', cursive !important; 
+        }
+        
+        body, html {
+            margin: 0; padding: 0; 
+            min-height: 100vh;
+            background-color: #1a1a1a; 
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+                              url(bg.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .custom-navbar {
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 15px 5%;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            border-bottom: 2px solid #FFCC00;
+            position: fixed; 
+            top: 0; left: 0; right: 0; 
+            z-index: 1000;
+        }
+
+        .nav-links a {
+            color: white !important; 
+            text-decoration: none;
+            margin-left: 20px; 
+            font-size: 18px; 
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .nav-links a:hover { color: #FFCC00 !important; }
+
+        .btn-contact {
+            background-color: #FFCC00; 
+            color: black !important;
+            padding: 8px 18px; 
+            border-radius: 8px; 
+            font-weight: bold;
+        }
+
+        .main-container { 
+            /* แก้ไขส่วนนี้ครับ */
+            min-height: 100vh; /* ให้ความสูงเท่ากับหน้าจอพอดี */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* จัดกลางแนวตั้ง */
+            align-items: center;     /* จัดกลางแนวนอน */
+            text-align: center; 
+            padding-top: 80px;      /* เผื่อพื้นที่ให้ Navbar ด้านบน */
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content-section { 
+            display: none; 
+            padding: 20px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-title {
+            font-size: clamp(60px, 10vw, 110px);
+            color: #FFFFFF; 
+            margin: 0;
+            text-shadow: 2px 2px 20px rgba(0,0,0,1);
+        }
+
+        .hero-slogan {
+            font-size: clamp(18px, 4vw, 26px);
+            color: #FFCC00; 
+            margin-top: 10px;
+        }
+
+        /* --- 5. Policy Cards --- */
+        .policy-container {
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+        
+        .policy-card {
+            background: rgba(0,0,0,0.85); 
+            padding: 30px; 
+            border-radius: 20px;
+            border: 2px solid #FFCC00; 
+            flex: 1 1 400px;
+            max-width: 500px;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .custom-navbar { flex-direction: column; padding: 15px; }
+            .nav-links { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; }
+            .nav-links a { margin: 5px 10px; font-size: 15px; }
+            .main-container { padding-top: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <nav class="custom-navbar">
+        <div style="font-size: 22px; font-weight: bold; color: white;">
+            SDMSLK <span style="color: #FFCC00;">| YOU CHOOSE , WE PACK 💪🏻🎬🎞️👆🏻</span>
+        </div>
+        <div class="nav-links">
+            <a onclick="showPage('home')">หน้าแรก</a>
+            <a onclick="showPage('policy')">นโยบายหลัก</a>
+            <a onclick="showPage('members')">สมาชิก</a>
+            <a onclick="showPage('report')">แจ้งเรื่อง</a>
+            <a onclick="showPage('contact')" class="btn-contact">ติดต่อเรา</a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div id="home" class="content-section active">
+            <h1 class="hero-title">SDMSLK</h1>
+            <p class="hero-slogan">𝙔𝙤𝙪 𝙘𝙝𝙤𝙤𝙨𝙚 , 𝙒𝙚 𝙥𝙖𝙘𝙠💪🏻🎬🎞️👆🏻</p>
+        </div>
+
+        <div id="policy" class="content-section">
+            <h1 style="color: #FFCC00;">📦 นโยบายหลักพรรค</h1>
+            <div class="policy-container">
+                <div class="policy-card">
+                    <h2 style="color:#FFCC00;">1. Coming Soon</h2>
+                    <p style="font-size:18px;">เราสนับสนุนทุกการตัดสินใจของคุณเพื่ออนาคตที่ดีกว่า</p>
+                </div>
+                <div class="policy-card">
+                    <h2 style="color:#FFCC00;">2. ความโปร่งใส</h2>
+                    <p style="font-size:18px;">ชัดเจน ตรวจสอบได้ทุกขั้นตอนในกระบวนการทำงาน</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="members" class="content-section"><h1>👥 สมาชิกพรรค</h1><p>รายชื่อสมาชิกจะอัปเดตที่นี่เร็วๆ นี้</p></div>
+        <div id="report" class="content-section"><h1>📢 แจ้งเรื่องร้องเรียน</h1><p>ส่งเรื่องผ่านช่องทางออนไลน์ของเราได้ 24 ชม.</p></div>
+        <div id="contact" class="content-section"><h1>📞 ช่องทางติดต่อ</h1><p>Facebook: SDMSLK Official</p></div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // ลบคลาส active ออกจากทุก section
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(s => s.classList.remove('active'));
+            
+            // เพิ่ม active ให้หน้าที่เลือก
+            const target = document.getElementById(pageId);
+            if(target) {
+                target.classList.add('active');
+            }
+
+            // เลื่อนขึ้นบนสุดแบบนุ่มนวล
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
