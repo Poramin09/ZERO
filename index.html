@@ -7,7 +7,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <style>
-        /* --- 1. Reset & Global Styles --- */
+
         * { 
             box-sizing: border-box; 
             font-family: 'Itim', cursive !important; 
@@ -58,14 +58,14 @@
         }
 
         .main-container { 
-            /* แก้ไขส่วนนี้ครับ */
-            min-height: 100vh; /* ให้ความสูงเท่ากับหน้าจอพอดี */
+
+            min-height: 100vh; 
             display: flex;
             flex-direction: column;
-            justify-content: center; /* จัดกลางแนวตั้ง */
-            align-items: center;     /* จัดกลางแนวนอน */
+            justify-content: center; 
+            align-items: center;     
             text-align: center; 
-            padding-top: 80px;      /* เผื่อพื้นที่ให้ Navbar ด้านบน */
+            padding-top: 80px;     
             position: relative;
             z-index: 1;
         }
@@ -96,7 +96,6 @@
             margin-top: 10px;
         }
 
-        /* --- 5. Policy Cards --- */
         .policy-container {
             display: flex; 
             justify-content: center; 
@@ -148,42 +147,104 @@
         </div>
 
         <div id="policy" class="content-section">
-            <h1 style="color: #FFCC00;">📦 นโยบายหลักพรรค</h1>
+            <h1 style="color: #ffffff;">📦 นโยบายหลักพรรค</h1>
             <div class="policy-container">
                 <div class="policy-card">
-                    <h2 style="color:#FFCC00;">1. Coming Soon</h2>
-                    <p style="font-size:18px;">coming soon</p>
+                    <h2 style="color:#FFCC00;">1. Inform Box</h2>
+                    <p style="font-size:18px;">รวบรวมข้อมูลกิจกรรมหรือโอกาสต่างๆเพื่อให้นักเรียนทุกคนได้เข้าถึงได้ง่าย และได้หาประสบการณ์ใหม่ๆของนักเรียน</p>
                 </div>
                 <div class="policy-card">
-                    <h2 style="color:#FFCC00;">2. Coming Soon</h2>
-                    <p style="font-size:18px;">coming soon</p>
+                    <h2 style="color:#FFCC00;">2. DR (Disaster Readiness) Box</h2>
+                    <p style="font-size:18px;">เตรียมรับมือความพร้อมกับภัยพิบัติต่างๆ โดยขอเชิญเจ้าหน้าที่เกี่ยวข้องมาเป็นวิทยากรให้ความรู้</p>
+                </div>
+                <div class="policy-card">
+                    <h2 style="color:#FFCC00;">3. Show Time Charm Shine Box</h2>
+                    <p style="font-size:18px;">จัดการเชิญชวนนักเรียนให้นักเรียนมากล้าแสดงออก ไม่ว่าจะเป็น MV หรือการ Cover ต่างๆ</p>
+                </div>
+                <div class="policy-card">
+                    <h2 style="color:#FFCC00;">4. New Gen Lip Box</h2>
+                    <p style="font-size:18px;">สร้างความพร้อมของห้องสมุด ให้นักเรียนทุกคนได้หาข้อมูลหรือหาที่อ่านหนังสือ</p>
+                </div>
+                <div class="policy-card">
+                    <h2 style="color:#FFCC00;">5. Empathy Box</h2>
+                    <p style="font-size:18px;">รับฟังปัญหาของนักเรียน โดยไม่ระบุตัวตน</p>
+                </div>
+                <div class="policy-card">
+                    <h2 style="color:#FFCC00;">6. Catalyst Room Box</h2>
+                    <p style="font-size:18px;">ยืมห้องว่างให้นักเรียนได้ซ้อมหรือทำกิจกรรมต่างๆ ในช่วงเวลาตอนเย็น</p>
+                </div>
+                <div class="policy-card">
+                    <h2 style="color:#FFCC00;">7. Echo Box</h2>
+                    <p style="font-size:18px;">หาความรู้ภายนอกโรงเรียนแล้วนำไปทำ Podcast เพื่อให้นักเรียนได้เข้าไปรับฟัง</p>
+                </div>
+                <div class="policy-card">
+                    <h2 style="color:#FFCC00;">8. Web Box</h2>
+                    <p style="font-size:18px;">สร้าง Website เพื่อเพิ่มความอำนวยสะดวกต่อนักเรียน เช่นแจ้งของหาย</p>
+                </div>
+                <div class="policy-card">
+                    <h2 style="color:#FFCC00;">9. Racket Box</h2>
+                    <p style="font-size:18px;">จัดการแข่งขัน Badminton ขึ้นมา</p>
+                </div>
+                <div class="policy-card">
+                    <h2 style="color:#FFCC00;">10. Inherit policies Box</h2>
+                    <p style="font-size:18px;">ทำนโยบายของรุ่นพี่ต่อ เช่น TUPP Festival , ธนาคารขยะ</p>
                 </div>
             </div>
         </div>
 
         <div id="members" class="content-section"><h1>👥 สมาชิกพรรค</h1><p>coming soon</p></div>
-        <div id="report" class="content-section"><h1>📢 แจ้งเรื่องร้องเรียน</h1><p>coming soon</p></div>
-        <div id="contact" class="content-section"><h1>📞 ช่องทางติดต่อ</h1><p>coming soon</p></div>
+        <div id="report" class="content-section">
+    <div style="text-align: center; margin-top: 50px;">
+        <h2 style="color: #FFCC00; font-size: 60px; margin-bottom: 10px;">SDMSLK Report</h2>
+        <p style="color: #ffffff; margin-bottom: 30px;">หากพบปัญหา กดช่องด้านล่างเพื่อแจ้งปัญหา</p>
+
+        <a href="https://forms.gle/cUHYioicaWiHnNUz9" target="_blank" 
+           style="display: inline-block; 
+                  background-color: #FFCC00; 
+                  color: #000; 
+                  padding: 18px 40px; 
+                  font-size: 20px; 
+                  font-weight: bold; 
+                  text-decoration: none; 
+                  border-radius: 50px; 
+                  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+                  transition: transform 0.3s ease;">
+           📦 คลิกเพื่อแจ้งปัญหา
+        </a>
     </div>
+</div>
+        <div id="contact" class="content-section" style="text-align: center;">
+    <h1 style="font-size: 40px; color: #FFCC00; margin-bottom: 20px;">📱 ช่องทางติดต่อเรา</h1>
+    <p style="margin-bottom: 30px;">สแกนเพื่อติดตามข่าวสารและกิจกรรมต่างๆ ผ่าน Instagram</p>
+
+    <div style="background: white; padding: 20px; display: inline-block; border-radius: 20px; box-shadow: 0 10px 30px rgba(255, 204, 0, 0.2);">
+        
+        <img src="SDMSLK.png" alt="Instagram QR Code" 
+             style="width: 250px; height: 250px; display: block;">
+        
+        <p style="color: #333; font-weight: bold; margin-top: 15px; font-size: 18px;">@paksadumasonglaewkrub</p>
+    </div>
+
+    <div style="margin-top: 30px;">
+        <a href="https://www.instagram.com/paksadumasonglaewkrub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" 
+           style="color: #FFCC00; text-decoration: none; border: 1px solid #FFCC00; padding: 10px 20px; border-radius: 10px;">
+           เข้าสู่ Instagram โดยตรง
+        </a>
+    </div>
+</div>
 
     <script>
         function showPage(pageId) {
-            // ลบคลาส active ออกจากทุก section
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(s => s.classList.remove('active'));
             
-            // เพิ่ม active ให้หน้าที่เลือก
             const target = document.getElementById(pageId);
             if(target) {
                 target.classList.add('active');
             }
 
-            // เลื่อนขึ้นบนสุดแบบนุ่มนวล
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
 </body>
 </html>
-
-
-
