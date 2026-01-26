@@ -204,7 +204,6 @@
     </div>
 
     <style>
-        /* เพิ่ม CSS สั้นๆ ตรงนี้เพื่อคุม Grid ในมือถือ */
         .responsive-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -212,13 +211,13 @@
         }
         @media (max-width: 600px) {
             .responsive-grid {
-                grid-template-columns: 1fr !important; /* มือถือให้เห็นคนเดียว รูปจะใหญ่สวย */
+                grid-template-columns: 1fr !important;
             }
         }
         .member-img-fix {
             width: 100%; 
-            height: auto !important; /* ปลดล็อกความสูง 300px */
-            aspect-ratio: 3/4; /* บังคับสัดส่วนให้เท่ากันทุกรูป */
+            height: auto !important; 
+            aspect-ratio: 3/4; 
             border-radius: 10px; 
             object-fit: cover; 
             border: 2px solid #ccc; 
@@ -299,7 +298,7 @@
             <p style="color:#FFCC00; font-weight:bold;">สมาชิกสภานักเรียนคนที่ 12</p>
         </div>
 
-        <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+        <div style="display: flex; justify-content: center; margin-bottom: 80px; padding: 0 20px;"></div><div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
             <img src="bew.jpg" class="member-img-fix">
             <h3 style="color: #fff; margin: 5px 0;">นางสาวพัชราภรณ์ ไชยมงคล</h3>
             <p style="color:#FFCC00; font-weight:bold;">สมาชิกสภานักเรียนคนที่ 13</p>
