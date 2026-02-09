@@ -116,33 +116,136 @@
         }
 
         @media (max-width: 768px) {
-            .custom-navbar { flex-direction: column; padding: 15px; }
-            .nav-links { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; }
-            .nav-links a { margin: 5px 10px; font-size: 15px; }
-            .main-container { padding-top: 200px; }
-        }
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 65px;         /* ขยับขึ้นให้ชิด Navbar มากขึ้น */
+        right: 15px;       /* ให้ชิดขวา ไม่กางเต็มจอ */
+        left: auto;        /* ยกเลิกการชิดซ้าย */
+        width: 200px;      /* กำหนดความกว้างให้เล็กลง (ปรับตัวเลขนี้ได้ตามใจ) */
+        background: rgba(0, 0, 0, 0.9); /* สีดำโปร่งแสงนิดๆ */
+        padding: 10px 0;
+        border: 1px solid #FFCC00; /* ใส่ขอบสีทองให้ดูเป็นระเบียบ */
+        border-radius: 15px;       /* ทำมุมมนให้ดูซอฟต์ ไม่แข็งกระด้าง */
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5); /* ใส่เงาให้เมนูดู "ลอย" ขึ้นมา */
+    }
+
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .nav-links a {
+        margin: 10px 0 !important;
+        font-size: 16px !important; /* ลดขนาดตัวอักษรในเมนูลงนิดนึง */
+        padding: 5px 20px;
+        text-align: left; /* เปลี่ยนมาจัดชิดซ้ายให้ดูเหมือนเมนูแอป */
+    }
+
+    .btn-contact {
+        margin: 5px 15px !important;
+        text-align: center !important;
+    }
+}
     </style>
+    <style>
+    @media (max-width: 768px) {
+        .custom-navbar div div span { 
+            display: inline !important; 
+            font-size: 16px !important; 
+            white-space: nowrap;
+        }
+    }
+</style>
 </head>
 <body>
 
     <div class="bg-overlay"></div>
     
-    <nav class="custom-navbar">
+<nav class="custom-navbar">
     <div style="display: flex; align-items: center; gap: 12px;">
         <img src="tupp.png" alt="พระเกี้ยว" style="height: 45px; width: auto;"> 
         <div style="font-size: 22px; font-weight: bold; color: white;">
+
             SDMSLK <span style="color: #FFCC00;">| YOU CHOOSE , WE PACK 💪🏻🎬🎞️👆🏻</span>
         </div>
     </div>
 
-    <div class="nav-links">
-        <a onclick="showPage('home')">หน้าแรก</a>
-        <a onclick="showPage('policy')">นโยบาย</a>
-        <a onclick="showPage('members')">สมาชิกพรรค</a>
-        <a onclick="showPage('report')">แจ้งปัญหา</a>
-        <a onclick="showPage('contact')" class="btn-contact">ติดต่อ</a>
+    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a onclick="showPage('home'); closeMenu();">🏠 หน้าแรก</a>
+        <a onclick="showPage('policy'); closeMenu();">📢 นโยบาย</a>
+        <a onclick="showPage('members'); closeMenu();">👥 สมาชิกพรรค</a>
+        <a onclick="showPage('report'); closeMenu();">💬 แจ้งปัญหา/ค้นหาของหาย</a>
+        <a onclick="showPage('calendar'); closeMenu();">🗓️ กำหนดการโรงเรียน</a>
+        <a onclick="showPage('contact'); closeMenu();" class="btn-contact">⚠️ ติดต่อ</a>
     </div>
 </nav>
+
+<style>
+
+.menu-toggle {
+    display: none; 
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1001;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: #FFCC00;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+}
+</style>
+
+<script>
+    function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    const menuIcon = document.getElementById('menuToggle');
+    
+    nav.classList.toggle('active');
+    menuIcon.classList.toggle('open');
+}
+
+function closeMenu() {
+    const nav = document.getElementById('navLinks');
+    const menuIcon = document.getElementById('menuToggle');
+
+    nav.classList.remove('active');
+    menuIcon.classList.remove('open');
+}
+</script>
 
     <div class="main-container">
         <div id="home" class="content-section active">
@@ -407,15 +510,54 @@
 </div>
 
             <div id="report" class="content-section">
-                <div style="text-align: center; margin-top: 50px;">
-                    <h2 style="color: #FFCC00; font-size: 60px; margin-bottom: 10px;">SDMSLK Report</h2>
-                    <p style="color: #ffffff; margin-bottom: 30px;">หากพบปัญหา กดช่องด้านล่างเพื่อแจ้งปัญหา</p>
-                    <a href="https://forms.gle/cUHYioicaWiHnNUz9" target="_blank"
-                    style="display: inline-block; background-color: #FFCC00; color: #000; padding: 18px 40px; font-size: 20px; font-weight: bold; text-decoration: none; border-radius: 50px; box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4); transition: transform 0.3s ease;">
-                    📦 คลิกเพื่อแจ้งปัญหา
-                    </a>
-                </div>
+    <div style="text-align: center; margin-top: 50px; padding: 0 20px;">
+        <h2 style="color: #FFCC00; font-size: clamp(35px, 8vw, 50px); margin-bottom: 10px;">SDMSLK Help Center</h2>
+        <p style="color: #ffffff; margin-bottom: 40px;">ระบบแจ้งปัญหา และ ค้นหาของหาย</p>
+        
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; max-width: 800px; margin: 0 auto;">
+            
+            <div style="flex: 1; min-width: 280px; background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 20px; border: 2px solid rgba(255, 204, 0, 0.2); transition: 0.3s;">
+                <span style="font-size: 50px;">⚠️</span>
+                <h3 style="color: #FFCC00; font-size: 24px;">แจ้งปัญหาภายในโรงเรียน</h3>
+                <p style="color: #ccc; font-size: 14px; margin-bottom: 20px;">แจ้งปัญหาที่พบภายในโรงเรียน</p>
+                <a href="https://forms.gle/cUHYioicaWiHnNUz9" target="_blank"
+                   style="display: block; background-color: #FFCC00; color: #000; padding: 12px; font-weight: bold; text-decoration: none; border-radius: 10px; transition: 0.3s;">
+                   คลิกเพื่อไปสู่หน้า แจ้งปัญหา
+                </a>
             </div>
+
+            <div style="flex: 1; min-width: 280px; background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 20px; border: 2px solid #FFCC00; box-shadow: 0 0 15px rgba(255, 204, 0, 0.1);">
+                <span style="font-size: 50px;">🔍</span>
+                <h3 style="color: #FFCC00; font-size: 24px;">ระบบค้นหาของหาย</h3>
+                <p style="color: #ccc; font-size: 14px; margin-bottom: 20px;">ค้นหาสิ่งที่สูญหายของท่าน</p>
+                <button onclick="showPage('lostsearch')" 
+                   style="width: 100%; background: none; border: 2px solid #FFCC00; color: #FFCC00; padding: 10px; font-weight: bold; border-radius: 10px; cursor: pointer; transition: 0.3s;">
+                   คลิกเพื่อกดเข้าสู่หน้า ค้นหาสิ่งของ
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="lostsearch" class="content-section">
+    <div style="text-align: center; margin-top: 50px; padding: 0 20px;">
+        <button onclick="showPage('report')" style="color: #FFCC00; background: none; border: 1px solid #FFCC00; padding: 5px 15px; border-radius: 20px; cursor: pointer; margin-bottom: 25px;">
+            ← ย้อนกลับหน้าแจ้งปัญหา
+        </button>
+        
+        <h2 style="color: #FFCC00; font-size: 40px; margin: 0;">Search Lost Items</h2>
+        <p style="color: #fff; margin-bottom: 30px;">พิมพ์ชื่อของที่หายเพื่อค้นหาสิ่งของของท่าน</p>
+        
+        <div style="max-width: 600px; margin: 0 auto 40px auto;">
+            <input type="text" id="lostInput" onkeyup="doSearch()" placeholder="กำลังตามหาอะไรอยู่...?" 
+                style="width: 100%; padding: 15px 25px; border-radius: 50px; border: 2px solid #FFCC00; background: rgba(0,0,0,0.6); color: white; font-size: 18px; outline: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        </div>
+        
+        <div id="lostDisplay" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; min-height: 300px;">
+        </div>
+    </div>
+</div>
 
             <div id="contact" class="content-section" style="text-align: center;">
                 <h1 style="font-size: 40px; color: #FFCC00; margin-bottom: 20px;">📱 ช่องทางติดต่อเรา</h1>
@@ -431,7 +573,15 @@
                     </a>
                 </div>
             </div>
-
+            <div id="calendar" class="content-section" style="text-align: center; padding: 20px;">
+    <h1 style="font-size: 40px; color: #FFCC00; margin-bottom: 20px;">📅 กำหนดการโรงเรียน</h1>
+    <h1 style="font-size: 25px"h1><p style="margin-bottom: 30px; color: #fff;">กำหนดการต่างๆ ในโรงเรียน</p>
+    
+    <div style="background: white; padding: 10px; border-radius: 15px; display: inline-block; width: 100%; max-width: 900px; height: 600px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <iframe src="https://calendar.google.com/calendar/embed?src=อีเมลของน้อง%40gmail.com&ctz=Asia%2FBangkok" 
+                style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
         </div> <script>
             function showPage(pageId) {
                 const sections = document.querySelectorAll('.content-section');
@@ -443,6 +593,31 @@
                 }
                 window.scrollTo({top: 0, behavior: 'smooth'});
             }
+            const database = [
+    { name: "รอ", loc: "รอ", img: "cross.jpg", date: "ไม่ทราบ" },
+]
+function doSearch() {
+    const q = document.getElementById('lostInput').value.toLowerCase();
+    const display = document.getElementById('lostDisplay');
+    
+    const match = database.filter(item => item.name.toLowerCase().includes(q));
+    
+    if (match.length > 0) {
+        display.innerHTML = '';
+        match.forEach(item => {
+            display.innerHTML += `
+                <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 20px; border: 1px solid #FFCC00; width: 280px; animation: fadeIn 0.3s ease-in-out;">
+                    <img src="${item.img}" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 12px;" onerror="this.src='https://via.placeholder.com/300x200?text=No+Photo'">
+                    <h3 style="color: #FFCC00; margin: 5px 0;">${item.name}</h3>
+                    <p style="font-size: 14px; color: #fff; margin: 5px 0;">📍 สถานที่พบ: ${item.loc}</p>
+                    <p style="font-size: 12px; color: #aaa;">📅 วันที่พบ: ${item.date}</p>
+                </div>
+            `;
+        });
+    } else {
+        display.innerHTML = '<p style="color: #ff4444;">-- ไม่พบข้อมูลสิ่งของที่ค้นหา --</p>';
+    }
+}
         </script>
     </body>
     </html>
